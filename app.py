@@ -1,4 +1,5 @@
 # This code is check by python linter
+# This is flask-app
 from flask import Flask, render_template
 app = Flask(__name__)
 
