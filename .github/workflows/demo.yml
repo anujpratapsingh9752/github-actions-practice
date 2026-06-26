@@ -1,0 +1,13 @@
+name: first workflow
+on:
+  push:
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkput code
+        uses: actions/checkout@v4
+
+      - name: Run shell command
+        run: echo "Hello DevOps Brother!"
