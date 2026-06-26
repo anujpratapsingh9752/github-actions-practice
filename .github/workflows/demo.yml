@@ -25,7 +25,3 @@ jobs:
 
       - name: Show Runner Operating System
         run: echo $RUNNER_OS
-
-      - name: Breap Workflow
-        run: exit 1
-
