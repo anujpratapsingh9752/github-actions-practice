@@ -1,13 +1,27 @@
 name: first workflow
+
 on:
   push:
 
 jobs:
   greet:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkput code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Run shell command
+      - name: Run Shell Command
         run: echo "Hello DevOps Brother!"
+
+      - name: Current Date
+        run: date
+
+      - name: Show Branch Name
+        run: echo ${{ github.ref_name }}
+
+      - name: List Repository Files
+        run: ls -la
+
+      - name: Show Runner Operating System
+        run: echo $RUNNER_OS
