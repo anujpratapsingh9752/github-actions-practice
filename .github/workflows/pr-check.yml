@@ -1,5 +1,5 @@
 name: PR Check
-#start
+
 on:
   pull_request:
     branches:
@@ -8,6 +8,8 @@ on:
 jobs:
   check-pr:
     runs-on: ubuntu-latest
+
     steps:
-        - name: Print branch
-          run: echo "PR check running for branch: ${{ github.head_ref }}"
+      - name: Print branch
+        run: |
+          echo "PR check running for branch: ${{ github.head_ref }}"
