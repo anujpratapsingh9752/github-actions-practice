@@ -2,7 +2,7 @@ name: Schedule Workflow
 
 on:
   schedule:
-    - cron: '33 15 * * *'
+    - cron: '25 10 * * *'
 
 jobs:
   backup-job:
