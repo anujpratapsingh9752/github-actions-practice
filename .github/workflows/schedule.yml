@@ -1,0 +1,13 @@
+name: Schedule Workflow
+
+on:
+  schedule:
+    - cron: '19 10 * * *'
+
+jobs:
+  backup-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Daily Message
+        run: echo "This workflow runs every day at midnight UTC"
