@@ -1,0 +1,31 @@
+name: Smart Pipeline
+
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: self-hosted
+    steps:
+      - run: echo "Linting code"
+
+  test:
+    runs-on: self-hosted
+    steps:
+      - run: echo "Running tests"
+
+  summary:
+    runs-on: self-hosted
+    needs: [lint, test]
+    steps:
+      - name: Show branch type
+        run: |
+          if [ "${GITHUB_REF}" == "refs/heads/main" ]; then
+            echo "This is MAIN branch push"
+          else
+            echo "This is FEATURE branch push"
+          fi
+
+      - name: Commit message
+        run: |
+          echo "Commit: ${{ github.event.commits[0].message }}"
