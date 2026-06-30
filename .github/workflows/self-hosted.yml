@@ -12,6 +12,7 @@ jobs:
         run: |
           hostname
           pwd
+          df -h
 
       - name: Create file
         run: |
