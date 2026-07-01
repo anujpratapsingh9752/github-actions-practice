@@ -1,6 +1,6 @@
 #!/bin/bash
 
 echo "Running Tests..."
-echo "All tests passed."
+echo "Test Failed"
 
-exit 0
+exit 1
