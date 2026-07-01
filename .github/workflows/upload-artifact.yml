@@ -1,0 +1,20 @@
+name: Upload Artifact Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Report Folder
+        run: |
+          mkdir reports
+          echo "CI Test Passed" > reports/report.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: reports/report.txt
